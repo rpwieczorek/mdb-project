@@ -17,7 +17,7 @@ const ItemForm = () => {
         <Form.Label column sm={2}>
           Name
         </Form.Label>
-        <Col sm={2}>
+        <Col sm={9}>
           <Form.Control placeholder="Enter name of a part"></Form.Control>
         </Col>    
       </Form.Group>
@@ -26,7 +26,7 @@ const ItemForm = () => {
         <Form.Label column sm={2}>
           Description
         </Form.Label>
-        <Col sm={2}>
+        <Col sm={9}>
           <Form.Control placeholder="Enter details of a part"></Form.Control>
         </Col>    
       </Form.Group>
@@ -35,7 +35,7 @@ const ItemForm = () => {
         <Form.Label column sm={2}>
           Category
         </Form.Label>
-        <Col sm={2}>
+        <Col sm={9}>
           <Form.Select >
             <option>Peripherals</option>
             <option>Computer components</option>
@@ -48,7 +48,7 @@ const ItemForm = () => {
         <Form.Label column sm={2}>
           Price
         </Form.Label>
-        <Col sm={2}>
+        <Col sm={9}>
           <Form.Control placeholder="Enter the price of a part"></Form.Control>
         </Col>    
       </Form.Group>

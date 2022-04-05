@@ -1,4 +1,5 @@
 import { Row, Col } from "react-bootstrap";
+import ButtonRemove from "../ButtonRemove/ButtonRemove";
 
 const List = props => {
   const numbersOfItems = props.items.length;
@@ -16,21 +17,20 @@ const List = props => {
           <Col>Description</Col>
           <Col>Category</Col>
           <Col>Price</Col>
+          <Col>Remove</Col>
         </li>
         {props.items.map(item => <li as={Row} key={item.id}  className="p-2 d-flex justify-content-between border-bottom">
           <Col>{item.name}</Col>
           <Col>{item.description}</Col>
           <Col>{item.category}</Col>
           <Col>${item.price}</Col>
+          <Col><ButtonRemove id={item.id} /></Col>
         </li>)}
         <li as={Row} className="p-2 d-flex justify-content-between border btn-secondary">
           <Col>Numbers of item: {numbersOfItems}</Col>
           <Col>Total price: ${totalPrice}</Col>  
         </li>
-
       </ul>
-     
-     
     </div>
   );
 }

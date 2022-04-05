@@ -1,15 +1,27 @@
 import { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import shortid from "shortid";
+import { addItem } from "../../redux/itemsRedux";
 
 const ItemForm = () => {
   const [name, setName] = useState();
   const [description, setDescription] = useState();
   const [category, setCategory] = useState();
   const [price, setPrice] = useState();
+  const dispatch = useDispatch();
   
   const handleAdd = e => {
     e.preventDefault();
-    console.log('handleAdd');
+    const item = {
+      id: shortid(),
+      name: name,
+      description: description,
+      category: category,
+      price: parseFloat(price),
+    };
+    console.log(item);
+    dispatch(addItem(item));
   }
   return (
     <form onSubmit={handleAdd}>

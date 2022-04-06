@@ -41,6 +41,13 @@
       "description": "test",
       "category": "Peripherals",
       "price": 123
+    },
+    {
+      "id": "LIlBK15AP",
+      "name": "test",
+      "description": "test",
+      "category": "Peripherals",
+      "price": 1879
     }
   ],
   "categories": [

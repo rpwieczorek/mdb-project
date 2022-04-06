@@ -1,5 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import ButtonRemove from "../ButtonRemove/ButtonRemove";
+import PropTypes from 'prop-types';
 
 const List = props => {
   const numbersOfItems = props.items.length;
@@ -27,12 +28,21 @@ const List = props => {
           <Col><ButtonRemove id={item.id} /></Col>
         </li>)}
         <li as={Row} className="p-2 d-flex justify-content-between border btn-secondary">
-          <Col>Numbers of item: {numbersOfItems}</Col>
+          <Col>Number of items: {numbersOfItems}</Col>
           <Col>Total price: ${totalPrice}</Col>  
         </li>
       </ul>
     </div>
   );
+}
+
+List.propTypes = {
+  requiredArrayOf: PropTypes.objectOf({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired})
 }
 
 export default List;

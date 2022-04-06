@@ -3,11 +3,13 @@ import { Form, Row, Col, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import shortid from "shortid";
 import { addItemRequest } from "../../redux/itemsRedux";
+import { addCategoryRequest } from "../../redux/categoriesRedux";
 
-const ItemForm = () => {
+const ItemForm = props => {
   const [name, setName] = useState();
   const [description, setDescription] = useState();
   const [category, setCategory] = useState();
+  const [newCategoryName, setNewCategoryName] = useState();
   const [price, setPrice] = useState();
   const dispatch = useDispatch();
   
@@ -24,6 +26,16 @@ const ItemForm = () => {
     dispatch(addItemRequest(item));
     // dispatch(addItem(item));
   }
+
+  const handleAddCategory = e => {
+    e.preventDefault();
+    const newCategory = {
+      id: shortid(),
+      name: newCategoryName,
+    }
+    dispatch(addCategoryRequest(newCategory));
+  } 
+  
   return (
     <form onSubmit={handleAdd}>
       <h2 className="text-center mt-5 mb-3">Add item to the list</h2>
@@ -33,6 +45,7 @@ const ItemForm = () => {
         </Form.Label>
         <Col sm={10}>
           <Form.Control placeholder="Enter name of a part"></Form.Control>
+            
         </Col>    
       </Form.Group>
 
@@ -50,11 +63,21 @@ const ItemForm = () => {
           Category
         </Form.Label>
         <Col sm={10}>
-          <Form.Select >
-            <option>Peripherals</option>
-            <option>Computer components</option>
-            <option>Software</option>
+          <Form.Select>
+            {props.categories.map(category => <option key={category.id}>{category.name}</option>)}           
           </Form.Select>
+        </Col>
+      </Form.Group>
+     
+      <Form.Group as={Row} className="mb-3" controlId="newCategory" onChange={(e) => setNewCategoryName(e.target.value)}>
+        <Form.Label column sm={2}>          
+        </Form.Label>
+        <Col sm={10}>
+          <Form.Control placeholder="Enter new category name">
+          </Form.Control>
+          <Button className="mt-2" onClick={handleAddCategory} variant="secondary">
+            Add a new category
+          </Button>
         </Col>
       </Form.Group>
 

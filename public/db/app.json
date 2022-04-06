@@ -22,27 +22,29 @@
       "price": "99.9"
     },
     {
-      "id": "QKHUuexnY",
-      "name": "test 2",
-      "description": "test",
-      "category": "Computer components",
-      "price": 123
+      "id": "rxyfdOIY5",
+      "name": "eleganckie krzesło",
+      "description": "od szanowanego projektanta",
+      "category": "Furniture",
+      "price": 1879
     }
   ],
-  
-  "categories": [ 
+  "categories": [
     {
       "id": "1",
       "name": "Computer components"
     },
     {
       "id": "2",
-      "name": "Pheripherals"
-    }, 
+      "name": "Peripherals"
+    },
     {
       "id": "3",
       "name": "Software"
+    },
+    {
+      "id": "Lw9nPl1j3",
+      "name": "Furniture"
     }
-    ]
-
+  ]
 }

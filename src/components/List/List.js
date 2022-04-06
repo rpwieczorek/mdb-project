@@ -3,6 +3,7 @@ import ButtonRemove from "../ButtonRemove/ButtonRemove";
 import PropTypes from 'prop-types';
 
 const List = props => {
+  // Count listed items and total pirce of listed items
   const numbersOfItems = props.items.length;
   let totalPrice = 0;
   for (let item of props.items){

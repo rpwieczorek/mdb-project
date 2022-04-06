@@ -2,10 +2,10 @@
   "items": [
     {
       "id": "1",
-      "name": "Intel Core i7",
-      "description": "procesor",
+      "name": "test",
+      "description": "test",
       "category": "Computer components",
-      "price": "145.5"
+      "price": 123
     },
     {
       "id": "2",
@@ -20,6 +20,13 @@
       "description": "operating system",
       "category": "Software",
       "price": "99.9"
+    },
+    {
+      "id": "QKHUuexnY",
+      "name": "test 2",
+      "description": "test",
+      "category": "Computer components",
+      "price": 123
     }
   ]
 }

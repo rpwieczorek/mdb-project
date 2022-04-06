@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import shortid from "shortid";
-import { addItem } from "../../redux/itemsRedux";
+import { addItemRequest } from "../../redux/itemsRedux";
 
 const ItemForm = () => {
   const [name, setName] = useState();
@@ -20,8 +20,9 @@ const ItemForm = () => {
       category: category,
       price: parseFloat(price),
     };
-    console.log(item);
-    dispatch(addItem(item));
+
+    dispatch(addItemRequest(item));
+    // dispatch(addItem(item));
   }
   return (
     <form onSubmit={handleAdd}>

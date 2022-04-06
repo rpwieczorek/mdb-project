@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import styles from './ButtonRemove.module.scss';
-import { removeItem } from '../../redux/itemsRedux';
+import { removeItem, removeItemRequest } from '../../redux/itemsRedux';
 
 const ButtonRemove = props => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const ButtonRemove = props => {
   
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(removeItem(itemId));
+    dispatch(removeItemRequest(itemId));
   };
   return (
     <form onSubmit={handleSubmit}>

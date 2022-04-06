@@ -6,7 +6,7 @@ const List = props => {
   const numbersOfItems = props.items.length;
   let totalPrice = 0;
   for (let item of props.items){
-    totalPrice += item.price;
+    totalPrice += parseFloat(item.price);
   }
   
   return (

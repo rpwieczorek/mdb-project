@@ -25,11 +25,12 @@ const ItemForm = () => {
   }
   return (
     <form onSubmit={handleAdd}>
+      <h2 className="text-center mt-5 mb-3">Add item to the list</h2>
       <Form.Group as={Row} className="mb-3" controlId="name" onChange={(e) => setName(e.target.value)}>
         <Form.Label column sm={2}>
           Name
         </Form.Label>
-        <Col sm={9}>
+        <Col sm={10}>
           <Form.Control placeholder="Enter name of a part"></Form.Control>
         </Col>    
       </Form.Group>
@@ -38,7 +39,7 @@ const ItemForm = () => {
         <Form.Label column sm={2}>
           Description
         </Form.Label>
-        <Col sm={9}>
+        <Col sm={10}>
           <Form.Control placeholder="Enter details of a part"></Form.Control>
         </Col>    
       </Form.Group>
@@ -47,7 +48,7 @@ const ItemForm = () => {
         <Form.Label column sm={2}>
           Category
         </Form.Label>
-        <Col sm={9}>
+        <Col sm={10}>
           <Form.Select >
             <option>Peripherals</option>
             <option>Computer components</option>
@@ -60,7 +61,7 @@ const ItemForm = () => {
         <Form.Label column sm={2}>
           Price
         </Form.Label>
-        <Col sm={9}>
+        <Col sm={10}>
           <Form.Control placeholder="Enter the price of a part"></Form.Control>
         </Col>    
       </Form.Group>

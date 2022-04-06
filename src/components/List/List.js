@@ -10,8 +10,8 @@ const List = props => {
   }
   
   return (
-    <div>
-      <h2>List of parts</h2>
+    <div className="mx-auto">
+      <h2 className="text-center mt-5">List of parts</h2>
       <ul className="list-group">
         <li as={Row} className="p-2 d-flex justify-content-between border btn-secondary">
           <Col>Name</Col>

@@ -1,6 +1,8 @@
 import { Row, Col } from "react-bootstrap";
 import ButtonRemove from "../ButtonRemove/ButtonRemove";
+import ButtonEdit from "../ButtonEdit/ButtonEdit";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 const List = props => {
   // Count listed items and total pirce of listed items
@@ -9,7 +11,7 @@ const List = props => {
   for (let item of props.items){
     totalPrice += parseFloat(item.price);
   }
-  
+
   return (
     <div className="mx-auto">
       <h2 className="text-center mt-5">List of parts</h2>
@@ -19,14 +21,17 @@ const List = props => {
           <Col>Description</Col>
           <Col>Category</Col>
           <Col>Price</Col>
-          <Col>Remove</Col>
+          <Col>Actions</Col>
         </li>
-        {props.items.map(item => <li as={Row} key={item.id}  className="p-2 d-flex justify-content-between border-bottom">
+        {props.items.map(item => <li as={Row} key={item.id}  className="p-2 d-flex align-middle justify-content-between border-bottom">
           <Col>{item.name}</Col>
           <Col>{item.description}</Col>
           <Col>{item.category}</Col>
           <Col>${item.price}</Col>
-          <Col><ButtonRemove id={item.id} /></Col>
+          <Col>
+            <ButtonRemove id={item.id} />
+            <Link to={'/item/'+ item.id}><ButtonEdit id={item.id} /></Link>
+          </Col>
         </li>)}
         <li as={Row} className="p-2 d-flex justify-content-between border btn-secondary">
           <Col>Number of items: {numbersOfItems}</Col>

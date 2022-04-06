@@ -27,6 +27,20 @@
       "description": "od szanowanego projektanta",
       "category": "Furniture",
       "price": 1879
+    },
+    {
+      "id": "FxVoFeq5p",
+      "name": "test",
+      "description": "test",
+      "category": "Peripherals",
+      "price": 123
+    },
+    {
+      "id": "8OnI7eF0H",
+      "name": "test 2",
+      "description": "test",
+      "category": "Peripherals",
+      "price": 123
     }
   ],
   "categories": [
@@ -45,6 +59,10 @@
     {
       "id": "Lw9nPl1j3",
       "name": "Furniture"
+    },
+    {
+      "id": "UrfoiqGpe",
+      "name": "testowa"
     }
   ]
 }

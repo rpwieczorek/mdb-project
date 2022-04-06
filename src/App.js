@@ -5,15 +5,26 @@ import './App.css';
 import Home from './components/Home/Home';
 import { fetchCategories } from './redux/categoriesRedux';
 import { fetchItems } from './redux/itemsRedux';
+import { Routes, Route } from "react-router-dom";
+import NavBar from './components/NavBar/NavBar';
+import NotFound from './components/NotFound/NotFound';
+import EditItem from './features/EditItem/EditItem';
+
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => dispatch(fetchItems()),[dispatch]);
   useEffect(() => dispatch(fetchCategories()),[dispatch]);
-  
+
   return (
     <Container>
-      <Home />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/item/:Id" element={<EditItem />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      
     </Container>
     
   );

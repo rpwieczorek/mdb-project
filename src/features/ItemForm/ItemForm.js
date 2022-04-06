@@ -44,7 +44,7 @@ const ItemForm = props => {
           Name
         </Form.Label>
         <Col sm={10}>
-          <Form.Control placeholder="Enter name of a part"></Form.Control>
+          <Form.Control placeholder="Enter a name of a part"></Form.Control>
             
         </Col>    
       </Form.Group>
@@ -73,7 +73,7 @@ const ItemForm = props => {
         <Form.Label column sm={2}>          
         </Form.Label>
         <Col sm={10}>
-          <Form.Control placeholder="Enter new category name">
+          <Form.Control placeholder="Enter a new category name">
           </Form.Control>
           <Button className="mt-2" onClick={handleAddCategory} variant="secondary">
             Add a new category
@@ -91,7 +91,7 @@ const ItemForm = props => {
       </Form.Group>
       
       <Button variant="primary" type="submit">
-        Add
+        Add an item to the list
       </Button>
     </form>
   );

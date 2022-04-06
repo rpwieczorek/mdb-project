@@ -15,8 +15,8 @@ const Home = () => {
 
   return (
     <div>
-      <ItemForm  categories={categories} />
-      <List items={items}/>
+      <ItemForm categories={categories} />
+      <List items={items} categories={categories} />
     </div>
   );
 }

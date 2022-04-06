@@ -8,7 +8,6 @@ const createActionName = actionName => `app/items/${actionName}`;
 const ADD_ITEM = createActionName('ADD_ITEM');
 const REMOVE_ITEM = createActionName('REMOVE_ITEM');
 const UPDATE_ITEMS = createActionName('UPDATE_ITEMS');
-const UPDATE_ITEM = createActionName('UPDATE_ITEM');
 
 //action creators
 export const addItem = payload => ({type: ADD_ITEM, payload});

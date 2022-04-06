@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import styles from './ButtonRemove.module.scss';
-import { removeItem, removeItemRequest } from '../../redux/itemsRedux';
+import { removeItemRequest } from '../../redux/itemsRedux';
+import PropTypes from 'prop-types';
 
 const ButtonRemove = props => {
   const dispatch = useDispatch();
@@ -18,6 +19,10 @@ const ButtonRemove = props => {
       </button>
     </form>    
   );
+};
+
+ButtonRemove.propTypes = {
+  id: PropTypes.string.isRequired
 };
 
 export default ButtonRemove;

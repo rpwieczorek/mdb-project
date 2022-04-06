@@ -28,5 +28,21 @@
       "category": "Computer components",
       "price": 123
     }
-  ]
+  ],
+  
+  "categories": [ 
+    {
+      "id": "1",
+      "name": "Computer components"
+    },
+    {
+      "id": "2",
+      "name": "Pheripherals"
+    }, 
+    {
+      "id": "3",
+      "name": "Software"
+    }
+    ]
+
 }

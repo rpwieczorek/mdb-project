@@ -26,14 +26,14 @@ const List = props => {
           <li as={Row} className="p-2 d-flex justify-content-between border btn-secondary">
             <Col>Name</Col>
             <Col>Description</Col>
-            <Col sm={2}  className="text-center">Category</Col>
+            <Col sm={3}  className="text-center">Category</Col>
             <Col sm={1}  className="text-center">Price</Col>
             <Col sm={1}  className="text-center">Actions</Col>
           </li>
           {props.items.map(item => <li as={Row} key={item.id}  className="p-2 d-flex align-middle justify-content-between border-bottom">
             <Col>{item.name}</Col>
             <Col>{item.description}</Col>
-            <Col sm={2}  className="text-center">{item.category}</Col>
+            <Col sm={3}  className="text-center">{item.category}</Col>
             <Col sm={1}  className="text-center">${item.price}</Col>
             <Col sm={1} className="text-center">
               <ButtonRemove id={item.id} />
@@ -46,9 +46,11 @@ const List = props => {
           </li>
         </ul>
       </div>
-      <Button onClick={handlePrint}>
-        Print or save as PDF file
-      </Button>
+      <div className="text-center mb-3">
+        <Button onClick={handlePrint}>
+          Print or save as PDF file
+        </Button>
+      </div>
     </>
   );
 }

@@ -47,7 +47,6 @@ const EditItem = () => {
     };
 
     dispatch(modifyItemRequest(item));
-    // dispatch(addItem(item));
   }
 
   const handleAddCategory = e => {

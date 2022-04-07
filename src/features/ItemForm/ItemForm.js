@@ -89,10 +89,11 @@ const ItemForm = props => {
           <Form.Control placeholder="Enter the price of a part"></Form.Control>
         </Col>    
       </Form.Group>
-      
-      <Button variant="primary" type="submit">
-        Add an item to the list
-      </Button>
+      <div className="text-center">
+        <Button variant="primary" type="submit">
+          Add an item to the list
+        </Button>
+      </div>
     </form>
   );
 };

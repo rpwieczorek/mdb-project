@@ -49,12 +49,10 @@ const Home = () => {
   // Filtering items for list
   const handleFiltering = e => {
     e.preventDefault();
+    setFilteredItems(items.filter(item => item.category === filteringCategory));
     if (filteringCategory === 'All categories') {
-      console.log(filteringCategory, items, filteredItems);
-      setFilteredItems([...items].sort((c1, c2) => (c1.id < c2.id) ? -1 : (c1.id > c2.id) ? 1 : 0));
-      console.log(filteredItems);
-    }  
-    setFilteredItems(items.filter(item => item.category === filteringCategory));   
+      setFilteredItems(items); 
+    }     
   };
 
   return (
@@ -82,9 +80,6 @@ const Home = () => {
         </div>
       </form>
       <List items={filteredItems} categories={categories} summary={totalPriceInEachCategory} handleSorting={handleSorting}/>
-      {/* {filteringCategory === 'All categories' 
-       ? <List items={filteredItems} categories={categories} summary={totalPriceInEachCategory} handleSorting={handleSorting}/>
-       : <List items={filteredItems} categories={categories} summary={totalPriceInEachCategory} handleSorting={handleSorting}/>}   */}
     </div>
   );
 }

@@ -64,9 +64,9 @@ export const removeItemRequest = itemId => {
 const itemsReducer = (statePart = [], action) => {
   switch(action.type) {
     case UPDATE_ITEMS:
-      return [...action.payload]
+      return [...action.payload];
     case ADD_ITEM:
-      return [...statePart, {...action.payload}]
+      return [...statePart, {...action.payload}];
     case MODIFY_ITEM:
       return statePart.map((item) =>
       item.id === action.payload.id ? action.payload : item);

@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
+import clsx from 'clsx';
+import styles from './List.module.scss';
 
 const List = props => {
   // Count listed items and total pirce of listed items
@@ -25,10 +27,38 @@ const List = props => {
         <h2 className="text-center mt-5">List of parts</h2>
         <ul className="list-group">
           <li as={Row} className="p-2 d-flex justify-content-between border btn-secondary">
-            <Col sm={3}>Name</Col>
-            <Col sm={3}>Description</Col>
-            <Col sm={3}  className="text-center">Category</Col>
-            <Col sm={2}  className="text-center">Price</Col>
+            <Col sm={3}>Name 
+              <button className={styles.button} onClick={() => props.handleSorting('name','up')}>
+                <span className={clsx('fa fa-angle-up ', styles.icon)}></span>
+              </button>
+              <button className={styles.button} onClick={() => props.handleSorting('name','down')}>
+                <span className={clsx('fa fa-angle-down ', styles.icon)}></span>
+              </button>
+            </Col>
+            <Col sm={3}>Description
+              <button className={styles.button} onClick={() => props.handleSorting('description','up')}>
+                <span className={clsx('fa fa-angle-up ', styles.icon)}></span>
+              </button>
+              <button className={styles.button} onClick={() => props.handleSorting('description','down')}>
+                <span className={clsx('fa fa-angle-down ', styles.icon)}></span>
+              </button>            
+            </Col>
+            <Col sm={3}  className="text-center">Category
+              <button className={styles.button} onClick={() => props.handleSorting('category','up')}>
+                <span className={clsx('fa fa-angle-up ', styles.icon)}></span>
+              </button>
+              <button className={styles.button} onClick={() => props.handleSorting('category','down')}>
+                <span className={clsx('fa fa-angle-down ', styles.icon)}></span>
+              </button> 
+            </Col>
+            <Col sm={2}  className="text-center">Price
+              <button className={styles.button} onClick={() => props.handleSorting('price','up')}>
+                <span className={clsx('fa fa-angle-up ', styles.icon)}></span>
+              </button>
+              <button className={styles.button} onClick={() => props.handleSorting('price','down')}>
+                <span className={clsx('fa fa-angle-down ', styles.icon)}></span>
+              </button>       
+            </Col>
             <Col sm={1}  className="text-center">Actions</Col>
           </li>
           {props.items.map(item => <li as={Row} key={item.id}  className="p-2 d-flex align-middle justify-content-between border-bottom">

@@ -10,20 +10,20 @@
     {
       "id": "2",
       "name": "HP 123G",
-      "description": "printer",
+      "description": "Printer",
       "category": "Peripherals",
-      "price": "45.5"
+      "price": 45.5
     },
     {
       "id": "3",
       "name": "Windows 10",
-      "description": "operating system",
+      "description": "Operating system",
       "category": "Software",
-      "price": "99.9"
+      "price": 99.9
     },
     {
       "id": "rxyfdOIY5",
-      "name": "eleganckie krzesło",
+      "name": "Eleganckie krzesło",
       "description": "od szanowanego projektanta",
       "category": "Furniture",
       "price": 1879
@@ -38,7 +38,7 @@
     {
       "id": "8OnI7eF0H",
       "name": "Steel Series Apex 3",
-      "description": "keyboard",
+      "description": "Keyboard",
       "category": "Peripherals",
       "price": 75
     },

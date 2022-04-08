@@ -4,11 +4,17 @@ import { useSelector } from "react-redux";
 import { getItems } from "../../redux/itemsRedux";
 import { getCategories } from "../../redux/categoriesRedux";
 import { Row,Col, Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const items = useSelector(state => getItems(state));
   const categories = useSelector(state => getCategories(state));
+  const [filteredItems,setFilteredItems] = useState(items);
+  const [filteringCategory,setFilteringCategory] = useState();
+  
+  useEffect(() => {
+    setFilteredItems(items)
+  }, [items]);
 
   //Calculating total price in each category
   let allCategoriesInItems = [];
@@ -27,17 +33,27 @@ const Home = () => {
       }
     }
   }
+   
+  const handleSorting = (sortBy,direction) => {
+    if (sortBy === 'price'){
+      if (direction === 'up') setFilteredItems([...filteredItems].sort((c1, c2) => (c1[sortBy] < c2[sortBy]) ? -1 : (c1[sortBy] > c2[sortBy]) ? 1 : 0));
+      else setFilteredItems([...filteredItems].sort((c1, c2) => (c1[sortBy] < c2[sortBy]) ? 1 : (c1[sortBy] > c2[sortBy]) ? -1 : 0));
+    }
+    else {   
+      if (direction === 'up') setFilteredItems([...filteredItems].sort((c1, c2) => (c1[sortBy].toLowerCase() < c2[sortBy].toLowerCase()) ? -1 : (c1[sortBy].toLowerCase() > c2[sortBy].toLowerCase()) ? 1 : 0));
+      else setFilteredItems([...filteredItems].sort((c1, c2) => (c1[sortBy].toLowerCase() < c2[sortBy].toLowerCase()) ? 1 : (c1[sortBy].toLowerCase() > c2[sortBy].toLowerCase()) ? -1 : 0));
+    } 
+  };
   
-  // Filtering items for list
-  const [filteredItems,setFilteredItems] = useState(items);
-  const [filteringCategory,setFilteringCategory] = useState('All categories');
-  
-  // const sorter = (sortBy) => (a, b) => a.sortBy > b.sortBy ? 1 : -1;
-  // items.sort(sorter('name'));
-  // console.log("Using sorter", items);
 
+  // Filtering items for list
   const handleFiltering = e => {
     e.preventDefault();
+    if (filteringCategory === 'All categories') {
+      console.log(filteringCategory, items, filteredItems);
+      setFilteredItems([...items].sort((c1, c2) => (c1.id < c2.id) ? -1 : (c1.id > c2.id) ? 1 : 0));
+      console.log(filteredItems);
+    }  
     setFilteredItems(items.filter(item => item.category === filteringCategory));   
   };
 
@@ -65,10 +81,10 @@ const Home = () => {
           </Form.Group> 
         </div>
       </form>
-      
-      {filteringCategory === 'All categories' 
-       ? <List items={items} categories={categories} summary={totalPriceInEachCategory} />
-       : <List items={filteredItems} categories={categories} summary={totalPriceInEachCategory} />}  
+      <List items={filteredItems} categories={categories} summary={totalPriceInEachCategory} handleSorting={handleSorting}/>
+      {/* {filteringCategory === 'All categories' 
+       ? <List items={filteredItems} categories={categories} summary={totalPriceInEachCategory} handleSorting={handleSorting}/>
+       : <List items={filteredItems} categories={categories} summary={totalPriceInEachCategory} handleSorting={handleSorting}/>}   */}
     </div>
   );
 }

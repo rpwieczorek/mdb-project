@@ -13,6 +13,7 @@ const List = props => {
   for (let item of props.items){
     totalPrice += parseFloat(item.price);
   }
+  // Printing
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -24,29 +25,43 @@ const List = props => {
         <h2 className="text-center mt-5">List of parts</h2>
         <ul className="list-group">
           <li as={Row} className="p-2 d-flex justify-content-between border btn-secondary">
-            <Col>Name</Col>
-            <Col>Description</Col>
+            <Col sm={3}>Name</Col>
+            <Col sm={3}>Description</Col>
             <Col sm={3}  className="text-center">Category</Col>
-            <Col sm={1}  className="text-center">Price</Col>
+            <Col sm={2}  className="text-center">Price</Col>
             <Col sm={1}  className="text-center">Actions</Col>
           </li>
           {props.items.map(item => <li as={Row} key={item.id}  className="p-2 d-flex align-middle justify-content-between border-bottom">
-            <Col>{item.name}</Col>
-            <Col>{item.description}</Col>
+            <Col sm={3}>{item.name}</Col>
+            <Col sm={3}>{item.description}</Col>
             <Col sm={3}  className="text-center">{item.category}</Col>
-            <Col sm={1}  className="text-center">${item.price}</Col>
+            <Col sm={2}  className="text-center">${item.price}</Col>
             <Col sm={1} className="text-center">
               <ButtonRemove id={item.id} />
               <Link to={'/item/'+ item.id}><ButtonEdit id={item.id} /></Link>
             </Col>
           </li>)}
           <li as={Row} className="p-2 d-flex justify-content-between border btn-secondary">
-            <Col>Number of items: {numbersOfItems}</Col>
-            <Col>Total price: ${totalPrice}</Col>  
+            <Col className="text-center">Number of items: {numbersOfItems}</Col>
+            <Col className="text-center">Total price: ${totalPrice}</Col>  
           </li>
         </ul>
+      
+        <h2 className="text-center mt-5">Summary for categories</h2>
+        <ul className="list-group">
+          <li as={Row} className="p-2 d-flex justify-content-between border btn-secondary">
+            <Col sm={3}  className="text-center">Category</Col>
+            <Col sm={3}  className="text-center">Nuber of items</Col>
+            <Col sm={3}  className="text-center">Total price</Col>
+          </li>
+          {props.summary.map(summary => <li as={Row} key={summary.category}  className="p-2 d-flex align-middle justify-content-between border-bottom">
+            <Col sm={3}  className="text-center">{summary.category}</Col>
+            <Col sm={3}  className="text-center">{summary.numberOfItems}</Col>
+            <Col sm={3} className="text-center">${summary.price}</Col>
+          </li>)}
+        </ul>
       </div>
-      <div className="text-center mb-3">
+      <div className="text-center mb-3 mt-3">
         <Button onClick={handlePrint}>
           Print or save as PDF file
         </Button>

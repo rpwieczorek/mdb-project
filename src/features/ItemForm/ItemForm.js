@@ -4,11 +4,12 @@ import { useDispatch } from "react-redux";
 import shortid from "shortid";
 import { addItemRequest } from "../../redux/itemsRedux";
 import { addCategoryRequest } from "../../redux/categoriesRedux";
+import PropTypes from 'prop-types';
 
 const ItemForm = props => {
   const [name, setName] = useState();
   const [description, setDescription] = useState();
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState('Computer components');
   const [newCategoryName, setNewCategoryName] = useState();
   const [price, setPrice] = useState();
   const dispatch = useDispatch();
@@ -96,6 +97,13 @@ const ItemForm = props => {
       </div>
     </form>
   );
+};
+
+ItemForm.propTypes = {
+  requiredArrayOf: PropTypes.objectOf({
+    id: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    })
 };
 
 export default ItemForm;

@@ -7,7 +7,7 @@ import { fetchCategories } from './redux/categoriesRedux';
 import { fetchItems } from './redux/itemsRedux';
 import { Routes, Route } from "react-router-dom";
 import NavBar from './components/NavBar/NavBar';
-import NotFound from './components/NotFound/NotFound';
+import NotFound from './pages/NotFound/NotFound';
 import EditItem from './features/EditItem/EditItem';
 
 

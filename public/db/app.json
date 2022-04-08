@@ -2,10 +2,10 @@
   "items": [
     {
       "id": "1",
-      "name": "test",
-      "description": "test",
-      "category": "Computer components",
-      "price": 123
+      "name": "Atmo87",
+      "description": "Height adjustable standing desk ",
+      "category": "Furniture",
+      "price": 1508
     },
     {
       "id": "2",
@@ -30,17 +30,31 @@
     },
     {
       "id": "FxVoFeq5p",
-      "name": "test",
-      "description": "test",
+      "name": "Logitech Mx Master",
+      "description": "Mouse",
       "category": "Peripherals",
-      "price": 123
+      "price": 154
     },
     {
       "id": "8OnI7eF0H",
-      "name": "test 2",
-      "description": "test",
+      "name": "Steel Series Apex 3",
+      "description": "keyboard",
       "category": "Peripherals",
-      "price": 123
+      "price": 75
+    },
+    {
+      "id": "VoHwdHSEv",
+      "name": "Intel core i7",
+      "description": "procesor",
+      "category": "Computer components",
+      "price": 200
+    },
+    {
+      "id": "PE3cTarFX",
+      "name": "MSI GeForce RTX",
+      "description": "graphic card",
+      "category": "Computer components",
+      "price": 1100
     }
   ],
   "categories": [

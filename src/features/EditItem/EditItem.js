@@ -47,6 +47,7 @@ const EditItem = () => {
     };
 
     dispatch(modifyItemRequest(item));
+    navigate('/', { replace: true });
   }
 
   const handleAddCategory = e => {

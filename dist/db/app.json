@@ -1,0 +1,82 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Atmo87",
+      "description": "Height adjustable standing desk ",
+      "category": "Furniture",
+      "price": 1508
+    },
+    {
+      "id": "2",
+      "name": "HP 123G",
+      "description": "printer",
+      "category": "Peripherals",
+      "price": "45.5"
+    },
+    {
+      "id": "3",
+      "name": "Windows 10",
+      "description": "operating system",
+      "category": "Software",
+      "price": "99.9"
+    },
+    {
+      "id": "rxyfdOIY5",
+      "name": "eleganckie krzesło",
+      "description": "od szanowanego projektanta",
+      "category": "Furniture",
+      "price": 1879
+    },
+    {
+      "id": "FxVoFeq5p",
+      "name": "Logitech Mx Master",
+      "description": "Mouse",
+      "category": "Peripherals",
+      "price": 154
+    },
+    {
+      "id": "8OnI7eF0H",
+      "name": "Steel Series Apex 3",
+      "description": "keyboard",
+      "category": "Peripherals",
+      "price": 75
+    },
+    {
+      "id": "VoHwdHSEv",
+      "name": "Intel core i7",
+      "description": "procesor",
+      "category": "Computer components",
+      "price": 200
+    },
+    {
+      "id": "PE3cTarFX",
+      "name": "MSI GeForce RTX",
+      "description": "graphic card",
+      "category": "Computer components",
+      "price": 1100
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Computer components"
+    },
+    {
+      "id": "2",
+      "name": "Peripherals"
+    },
+    {
+      "id": "3",
+      "name": "Software"
+    },
+    {
+      "id": "Lw9nPl1j3",
+      "name": "Furniture"
+    },
+    {
+      "id": "UrfoiqGpe",
+      "name": "testowa"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "projectName": "mdb-project",
+  "meta": {
+    "type": "frontend"
+  },
+  "packageManager": "yarn",
+  "hash": "22796b5e"
+}

@@ -33,7 +33,8 @@ const Home = () => {
       }
     }
   }
-   
+  
+  // sorting list by each column
   const handleSorting = (sortBy,direction) => {
     if (sortBy === 'price'){
       if (direction === 'up') setFilteredItems([...filteredItems].sort((c1, c2) => (c1[sortBy] < c2[sortBy]) ? -1 : (c1[sortBy] > c2[sortBy]) ? 1 : 0));

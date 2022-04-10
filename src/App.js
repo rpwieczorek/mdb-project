@@ -15,6 +15,9 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => dispatch(fetchItems()),[dispatch]);
   useEffect(() => dispatch(fetchCategories()),[dispatch]);
+  useEffect(() => {
+   document.title = "mdb-calculator";
+  },[]);
 
   return (
     <Container>
